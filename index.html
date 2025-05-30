@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANUJ PARAJULI | Cyberpunk Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body>
+    <!-- Hidden Audio Elements -->
+    <audio id="welcomeAudio" preload="auto">
+        <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmQhCjmN2O/NcB8GKnrM7+KUORUQYL/m4KdSEQlHo+OvnV0dCzoH" type="audio/wav">
+    </audio>
+    
+    <!-- Secret Cursor Trail Canvas -->
+    <canvas id="cursorTrail"></canvas>
+    
+    <!-- Secret HUD Stats -->
+    <div id="secretHUD" class="secret-hud">
+        <div class="hud-item">
+            <span class="hud-label">UPTIME:</span>
+            <span id="uptimeCounter">00:00:00</span>
+        </div>
+        <div class="hud-item">
+            <span class="hud-label">VISITORS:</span>
+            <span id="visitorCount">1337</span>
+        </div>
+        <div class="hud-item">
+            <span class="hud-label">ENERGY:</span>
+            <div class="energy-bar">
+                <div id="energyLevel" class="energy-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating AI Assistant -->
+    <div id="aiAssistant" class="ai-assistant">
+        <div class="ai-orb"></div>
+        <div id="aiTooltip" class="ai-tooltip"></div>
+    </div>
+
+    <!-- Secret Terminal Modal -->
+    <div id="terminalModal" class="terminal-modal hidden">
+        <div class="terminal-content">
+            <div class="terminal-header">
+                <span>ANUJ_TERMINAL v2.0.24</span>
+                <button id="closeTerminal" class="terminal-close">X</button>
+            </div>
+            <div id="terminalOutput" class="terminal-output">
+                <div class="terminal-line">Welcome to Anuj's Neural Network...</div>
+                <div class="terminal-line">Type 'help' for available commands</div>
+            </div>
+            <div class="terminal-input-line">
+                <span class="terminal-prompt">anuj@portfolio:~$</span>
+                <input type="text" id="terminalInput" class="terminal-input" autocomplete="off">
+            </div>
+        </div>
+    </div>
+
+    <!-- Secret Chatbot Modal -->
+    <div id="chatbotModal" class="chatbot-modal hidden">
+        <div class="chatbot-content">
+            <div class="chatbot-header">
+                <span>CYBER ASSISTANT</span>
+                <button id="closeChatbot" class="chatbot-close">X</button>
+            </div>
+            <div id="chatbotMessages" class="chatbot-messages">
+                <div class="bot-message">Hello! I'm Anuj's cyber assistant. Ask me anything!</div>
+            </div>
+            <div class="chatbot-input-area">
+                <input type="text" id="chatbotInput" placeholder="Type your message..." class="chatbot-input">
+                <button id="sendChatbot" class="chatbot-send">SEND</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Secret Project Modal -->
+    <div id="secretProjectModal" class="secret-project-modal hidden">
+        <div class="secret-project-content">
+            <button id="closeSecretProject" class="secret-close">X</button>
+            <h2 class="secret-title">CLASSIFIED PROJECT</h2>
+            <div class="secret-text">
+                <p>PROJECT: NEURAL_LINK</p>
+                <p>STATUS: [REDACTED]</p>
+                <p>DESCRIPTION: Advanced AI consciousness transfer protocol...</p>
+                <p>TECH STACK: Quantum Computing, Neural Networks, Blockchain</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Konami Code Modal -->
+    <div id="konamiModal" class="konami-modal hidden">
+        <div class="konami-content">
+            <h2>🎮 KONAMI CODE ACTIVATED! 🎮</h2>
+            <p>You've unlocked the secret retro mode!</p>
+            <div class="retro-animation"></div>
+            <button id="closeKonami">CLOSE</button>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="brand-icon">AP</div>
+                <!-- Secret Terminal Access Icon -->
+                <span id="terminalTrigger" class="terminal-trigger" title="Access Terminal">▸_</span>
+                <span class="brand-text">ANUJ PARAJULI</span>
+            </div>
+            
+            <div class="nav-links">
+                <a href="#hero" class="nav-link active" data-section="hero">HOME</a>
+                <a href="#about" class="nav-link" data-section="about">ABOUT</a>
+                <a href="#skills" class="nav-link" data-section="skills">SKILLS</a>
+                <a href="#projects" class="nav-link" data-section="projects">PROJECTS</a>
+                <a href="#services" class="nav-link" data-section="services">SERVICES</a>
+                <a href="#contact" class="nav-link" data-section="contact">CONTACT</a>
+            </div>
+            
+            <!-- Secret Glitch Toggle -->
+            <div id="glitchToggle" class="glitch-toggle" title="Enter Hacker Mode">⚡</div>
+            
+            <!-- Secret Crosshair Target -->
+            <div id="crosshairTarget" class="crosshair-target" title="Sniper Mode">🎯</div>
+        </div>
+        
+        <div class="nav-dots">
+            <div class="nav-dot active" data-section="hero"></div>
+            <div class="nav-dot" data-section="about"></div>
+            <div class="nav-dot" data-section="skills"></div>
+            <div class="nav-dot" data-section="projects"></div>
+            <div class="nav-dot" data-section="services"></div>
+            <div class="nav-dot" data-section="contact"></div>
+        </div>
+        
+        <div class="progress-bar"></div>
+    </nav>
+
+    <!-- Ghost Navigation Secret -->
+    <div id="ghostNav" class="ghost-nav hidden">
+        <a href="#secret">👻 SECRET AREA</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <!-- ... keep existing code (background effects, particles, scanline) the same ... -->
+        <div class="hero-bg"></div>
+        <div class="particles"></div>
+        <div class="scanline"></div>
+        
+        <div class="hero-content">
+            <div class="profile-ring">
+                <div class="profile-inner">
+                    <div class="profile-core">
+                        <span class="profile-initials">AP</span>
+                    </div>
+                </div>
+                <div class="floating-ui top-right"></div>
+                <div class="floating-ui bottom-left"></div>
+                <div class="floating-ui left-center"></div>
+            </div>
+            
+            <h1 class="hero-title">
+                <span class="title-first">ANUJ</span>
+                <span id="clickableName" class="title-last glitch-text">PARAJULI</span>
+            </h1>
+            
+            <div class="hero-subtitle">Frontend Developer & UI/UX Designer</div>
+            
+            <div class="typewriter-container">
+                <span id="typewriter" class="typewriter-text"></span>
+            </div>
+            
+            <div class="hero-buttons">
+                <button id="projectsBtn" class="btn-primary" data-hover-count="0">VIEW PROJECTS</button>
+                <button id="resumeBtn" class="btn-secondary" data-hover-count="0">DOWNLOAD RESUME</button>
+            </div>
+            
+            <!-- Secret Time-Based Popup -->
+            <div id="timePopup" class="time-popup hidden">
+                <p>🕐 Perfect timing! You've discovered the 4:04 PM secret!</p>
+            </div>
+        </div>
+        
+        <div class="hud-elements">
+            <div class="hud-left">
+                <div class="status-online">STATUS: ONLINE</div>
+                <div class="location">LOC: KATHMANDU, NP</div>
+            </div>
+            <div class="hud-right">
+                <div class="version">VRTX</div>
+                <div class="build">v2.0.24</div>
+            </div>
+        </div>
+        
+        <!-- Secret Blur Trigger Pixel -->
+        <div id="blurTrigger" class="blur-trigger"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="about-bg"></div>
+        
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title neon-blue">ABOUT.EXE</h2>
+                <div class="title-underline"></div>
+            </div>
+            
+            <div class="about-grid">
+                <div class="bio-panel glass-panel">
+                    <div class="panel-header">
+                        <div class="status-indicator"></div>
+                        <span class="panel-label">USER_PROFILE.DATA</span>
+                    </div>
+                    
+                    <p class="bio-text">
+                        Creative IT undergraduate from Kathmandu, Nepal, specializing in 
+                        <span class="highlight-blue">frontend development</span> and 
+                        <span class="highlight-pink">UI/UX design</span>. Passionate about crafting 
+                        digital experiences that merge aesthetics with functionality.
+                    </p>
+                    
+                    <p class="bio-secondary">
+                        Currently pursuing my BSc in IT while building innovative web applications 
+                        and exploring the intersection of design and technology.
+                    </p>
+                    
+                    <div class="traits-section">
+                        <h3 class="traits-title">CORE_ATTRIBUTES</h3>
+                        <div class="traits-grid">
+                            <div class="trait-item secret-trait" data-trait="communication">
+                                <span class="trait-icon">📡</span>
+                                <span class="trait-name">Communication</span>
+                            </div>
+                            <div class="trait-item secret-trait" data-trait="accountability">
+                                <span class="trait-icon">🛡️</span>
+                                <span class="trait-name">Accountability</span>
+                            </div>
+                            <div class="trait-item secret-trait" data-trait="accuracy">
+                                <span class="trait-icon">🎯</span>
+                                <span class="trait-name">Accuracy</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Secret Badge -->
+                        <div id="secretBadge" class="secret-badge hidden">
+                            <span>🏆 TRAIT MASTER UNLOCKED!</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-panel glass-panel">
+                    <div class="panel-header">
+                        <div class="status-indicator purple"></div>
+                        <span class="panel-label">EDUCATION.LOG</span>
+                    </div>
+                    
+                    <div class="timeline">
+                        <div class="timeline-item active" draggable="true" data-year="2023">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-year">2023–Present</div>
+                                <h3 class="timeline-title">BSc in IT</h3>
+                                <p class="timeline-institution">Asia Pacific University</p>
+                                <span class="status-badge">IN PROGRESS</span>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item" draggable="true" data-year="2023">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-year">2023</div>
+                                <h3 class="timeline-title">Higher Secondary</h3>
+                                <p class="timeline-institution">Ambition Academy</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item" draggable="true" data-year="2021">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-year">2021</div>
+                                <h3 class="timeline-title">Secondary</h3>
+                                <p class="timeline-institution">Ambition Academy</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Secret Time Jump Animation -->
+                    <div id="timeJump" class="time-jump hidden">
+                        <span>⚡ TIME JUMP ACTIVATED! ⚡</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <!-- ... keep existing code (animated grid background) the same ... -->
+        <div class="skills-bg"></div>
+        
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title neon-green">SKILLS.MATRIX</h2>
+                <div class="title-underline"></div>
+            </div>
+            
+            <!-- Secret XP Bar -->
+            <div id="xpBar" class="xp-bar hidden">
+                <div class="xp-label">SKILL XP</div>
+                <div class="xp-progress">
+                    <div id="xpFill" class="xp-fill"></div>
+                </div>
+                <div id="levelUp" class="level-up hidden">🎉 LEVEL UP!</div>
+            </div>
+            
+            <div class="skills-grid">
+                <div class="skill-category" data-color="blue">
+                    <div class="category-header">
+                        <div class="category-icon">💻</div>
+                        <div class="category-info">
+                            <h3 class="category-title">Frontend</h3>
+                            <div class="category-modules">4 MODULES</div>
+                        </div>
+                    </div>
+                    
+                    <div class="skills-list">
+                        <div class="skill-item secret-skill" data-skill="html" data-hover-count="0">
+                            <span class="skill-name">HTML</span>
+                            <div class="skill-level">
+                                <div class="level-dots">
+                                    <div class="dot filled"></div>
+                                    <div class="dot filled"></div>
+                                    <div class="dot filled"></div>
+                                    <div class="dot filled"></div>
+                                    <div class="dot"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-item secret-skill" data-skill="css" data-hover-count="0">
+                            <span class="skill-name">CSS</span>
+                            <div class="skill-level">
+                                <div class="level-dots">
+                                    <div class="dot filled"></div>
+                                    <div class="dot filled"></div>
+                                    <div class="dot filled"></div>
+                                    <div class="dot filled"></div>
+                                    <div class="dot"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-item secret-skill" data-skill="javascript" data-hover-count="0">
+                            <span class="skill-name">JavaScript</span>
+                            <div class="skill-level">
+                                <div class="level-dots">
+                                    <div class="dot filled"></div>
+                                    <div class="dot filled"></div>
+                                    <div class="dot filled"></div>
+                                    <div class="dot filled"></div>
+                                    <div class="dot"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-item secret-skill" data-skill="react" data-hover-count="0">
+                            <span class="skill-name">React</span>
+                            <div class="skill-level">
+                                <div class="level-dots">
+                                    <div class="dot filled"></div>
+                                    <div class="dot filled"></div>
+                                    <div class="dot filled"></div>
+                                    <div class="dot filled"></div>
+                                    <div class="dot"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Secret Badge -->
+                    <div class="hidden-badge" data-category="frontend">
+                        <span class="badge-icon">🏅</span>
+                        <span class="badge-text">SKILL TREE</span>
+                    </div>
+                </div>
+                
+                <!-- Similar structure for other skill categories with secret interactions -->
+                <div class="skill-category" data-color="pink">
+                    <!-- ... keep existing UI/UX skills structure ... -->
+                    <div class="category-header">
+                        <div class="category-icon">🎨</div>
+                        <div class="category-info">
+                            <h3 class="category-title">UI/UX</h3>
+                            <div class="category-modules">4 MODULES</div>
+                        </div>
+                    </div>
+                    
+                    <div class="skills-list">
+                        <div class="skill-item secret-skill" data-skill="figma" data-hover-count="0">
+                            <span class="skill-name">Figma</span>
+                            <div class="skill-level">
+                                <div class="level-dots">
+                                    <div class="dot filled"></div>
+                                    <div class="dot filled"></div>
+                                    <div class="dot filled"></div>
+                                    <div class="dot filled"></div>
+                                    <div class="dot"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-item secret-skill" data-skill="canva" data-hover-count="0">
+                            <span class="skill-name">Canva</span>
+                            <div class="skill-level">
+                                <div class="level-dots">
+                                    <div class="dot filled"></div>
+                                    <div class="dot filled"></div>
+                                    <div class="dot filled"></div>
+                                    <div class="dot filled"></div>
+                                    <div class="dot"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-item secret-skill" data-skill="adobe" data-hover-count="0">
+                            <span class="skill-name">Adobe XD</span>
+                            <div class="skill-level">
+                                <div class="level-dots">
+                                    <div class="dot filled"></div>
+                                    <div class="dot filled"></div>
+                                    <div class="dot filled"></div>
+                                    <div class="dot filled"></div>
+                                    <div class="dot"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-item secret-skill" data-skill="prototyping" data-hover-count="0">
+                            <span class="skill-name">Prototyping</span>
+                            <div class="skill-level">
+                                <div class="level-dots">
+                                    <div class="dot filled"></div>
+                                    <div class="dot filled"></div>
+                                    <div class="dot filled"></div>
+                                    <div class="dot filled"></div>
+                                    <div class="dot"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="hidden-badge" data-category="uiux">
+                        <span class="badge-icon">🎭</span>
+                        <span class="badge-text">DESIGN TREE</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category" data-color="green">
+                    <!-- ... keep existing Data skills structure ... -->
+                    <div class="category-header">
+                        <div class="category-icon">📊</div>
+                        <div class="category-info">
+                            <h3 class="category-title">Data</h3>
+                            <div class="category-modules">4 MODULES</div>
+                        </div>
+                    </div>
+                    
+                    <div class="skills-list">
+                        <div class="skill-item secret-skill" data-skill="excel" data-hover-count="0">
+                            <span class="skill-name">Excel</span>
+                            <div class="skill-level">
+                                <div class="level-dots">
+                                    <div class="dot filled"></div>
+                                    <div class="dot filled"></div>
+                                    <div class="dot filled"></div>
+                                    <div class="dot filled"></div>
+                                    <div class="dot"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-item secret-skill" data-skill="sheets" data-hover-count="0">
+                            <span class="skill-name">Google Sheets</span>
+                            <div class="skill-level">
+                                <div class="level-dots">
+                                    <div class="dot filled"></div>
+                                    <div class="dot filled"></div>
+                                    <div class="dot filled"></div>
+                                    <div class="dot filled"></div>
+                                    <div class="dot"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-item secret-skill" data-skill="powerbi" data-hover-count="0">
+                            <span class="skill-name">Power BI</span>
+                            <div class="skill-level">
+                                <div class="level-dots">
+                                    <div class="dot filled"></div>
+                                    <div class="dot filled"></div>
+                                    <div class="dot filled"></div>
+                                    <div class="dot filled"></div>
+                                    <div class="dot"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-item secret-skill" data-skill="analytics" data-hover-count="0">
+                            <span class="skill-name">Analytics</span>
+                            <div class="skill-level">
+                                <div class="level-dots">
+                                    <div class="dot filled"></div>
+                                    <div class="dot filled"></div>
+                                    <div class="dot filled"></div>
+                                    <div class="dot filled"></div>
+                                    <div class="dot"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="hidden-badge" data-category="data">
+                        <span class="badge-icon">📈</span>
+                        <span class="badge-text">DATA TREE</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category" data-color="yellow">
+                    <!-- ... keep existing Programming skills structure ... -->
+                    <div class="category-header">
+                        <div class="category-icon">⚡</div>
+                        <div class="category-info">
+                            <h3 class="category-title">Programming</h3>
+                            <div class="category-modules">4 MODULES</div>
+                        </div>
+                    </div>
+                    
+                    <div class="skills-list">
+                        <div class="skill-item secret-skill" data-skill="python" data-hover-count="0">
+                            <span class="skill-name">Python</span>
+                            <div class="skill-level">
+                                <div class="level-dots">
+                                    <div class="dot filled"></div>
+                                    <div class="dot filled"></div>
+                                    <div class="dot filled"></div>
+                                    <div class="dot filled"></div>
+                                    <div class="dot"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-item secret-skill" data-skill="js" data-hover-count="0">
+                            <span class="skill-name">JavaScript</span>
+                            <div class="skill-level">
+                                <div class="level-dots">
+                                    <div class="dot filled"></div>
+                                    <div class="dot filled"></div>
+                                    <div class="dot filled"></div>
+                                    <div class="dot filled"></div>
+                                    <div class="dot"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-item secret-skill" data-skill="git" data-hover-count="0">
+                            <span class="skill-name">Git</span>
+                            <div class="skill-level">
+                                <div class="level-dots">
+                                    <div class="dot filled"></div>
+                                    <div class="dot filled"></div>
+                                    <div class="dot filled"></div>
+                                    <div class="dot filled"></div>
+                                    <div class="dot"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-item secret-skill" data-skill="linux" data-hover-count="0">
+                            <span class="skill-name">Linux</span>
+                            <div class="skill-level">
+                                <div class="level-dots">
+                                    <div class="dot filled"></div>
+                                    <div class="dot filled"></div>
+                                    <div class="dot filled"></div>
+                                    <div class="dot filled"></div>
+                                    <div class="dot"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="hidden-badge" data-category="programming">
+                        <span class="badge-icon">⚡</span>
+                        <span class="badge-text">CODE TREE</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Secret Hack This Skill Game -->
+            <div id="hackGameModal" class="hack-game-modal hidden">
+                <div class="hack-game-content">
+                    <h3>🎮 HACK THIS SKILL</h3>
+                    <div class="code-snippet">
+                        <pre id="codeSnippet"></pre>
+                    </div>
+                    <button id="closeHackGame">CLOSE</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <!-- ... keep existing code (background effects) the same ... -->
+        <div class="projects-bg"></div>
+        
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title neon-pink">PROJECTS.ARCHIVE</h2>
+                <div class="title-underline"></div>
+            </div>
+            
+            <div class="projects-grid" id="projectsGrid">
+                <div class="project-card" data-project="swastha" data-draggable="true">
+                    <div class="project-header">
+                        <div class="project-icon">🏥</div>
+                        <div class="project-info">
+                            <h3 class="project-title">Swastha Sewa App</h3>
+                            <p class="project-category">UI/UX Design</p>
+                        </div>
+                        <div class="project-status">Completed</div>
+                    </div>
+                    
+                    <p class="project-description">
+                        Healthcare appointment mobile UI designed in Figma with intuitive user flows.
+                    </p>
+                    
+                    <div class="project-tech">
+                        <span class="tech-tag">Figma</span>
+                        <span class="tech-tag">UI/UX</span>
+                        <span class="tech-tag">Mobile</span>
+                    </div>
+                    
+                    <div class="project-actions">
+                        <button class="btn-project-primary">VIEW PROJECT</button>
+                        <button class="btn-project-secondary">CODE</button>
+                    </div>
+                    
+                    <!-- Secret Dev Notes Icon -->
+                    <div class="dev-notes-icon" data-project="swastha">📝</div>
+                </div>
+                
+                <div class="project-card secret-project-trigger" data-project="comic" data-draggable="true">
+                    <div class="project-header">
+                        <div class="project-icon">🎬</div>
+                        <div class="project-info">
+                            <h3 class="project-title">Comic Guide Web App</h3>
+                            <p class="project-category">Frontend Development</p>
+                        </div>
+                        <div class="project-status">Live</div>
+                    </div>
+                    
+                    <p class="project-description">
+                        Interactive movie guide application with real-time data integration.
+                    </p>
+                    
+                    <div class="project-tech">
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">HTML/CSS</span>
+                        <span class="tech-tag">API</span>
+                    </div>
+                    
+                    <div class="project-actions">
+                        <button class="btn-project-primary">VIEW PROJECT</button>
+                        <button class="btn-project-secondary">CODE</button>
+                    </div>
+                    
+                    <div class="dev-notes-icon" data-project="comic">📝</div>
+                </div>
+                
+                <div class="project-card" data-project="dashboard" data-draggable="true">
+                    <div class="project-header">
+                        <div class="project-icon">📊</div>
+                        <div class="project-info">
+                            <h3 class="project-title">Sales Dashboard</h3>
+                            <p class="project-category">Data Visualization</p>
+                        </div>
+                        <div class="project-status">Completed</div>
+                    </div>
+                    
+                    <p class="project-description">
+                        Interactive Power BI dashboard for sales analytics with real-time insights.
+                    </p>
+                    
+                    <div class="project-tech">
+                        <span class="tech-tag">Power BI</span>
+                        <span class="tech-tag">Excel</span>
+                        <span class="tech-tag">Analytics</span>
+                    </div>
+                    
+                    <div class="project-actions">
+                        <button class="btn-project-primary">VIEW PROJECT</button>
+                        <button class="btn-project-secondary">CODE</button>
+                    </div>
+                    
+                    <div class="dev-notes-icon" data-project="dashboard">📝</div>
+                </div>
+                
+                <div class="project-card glitched-project" data-project="network" data-draggable="true">
+                    <div class="project-header">
+                        <div class="project-icon">🛡️</div>
+                        <div class="project-info">
+                            <h3 class="project-title">Network Setup Project</h3>
+                            <p class="project-category">System Configuration</p>
+                        </div>
+                        <div class="project-status">Completed</div>
+                    </div>
+                    
+                    <p class="project-description">
+                        Configured secure DNS, DHCP, Mail & Web Servers using Kali Linux.
+                    </p>
+                    
+                    <div class="project-tech">
+                        <span class="tech-tag">Kali Linux</span>
+                        <span class="tech-tag">Networking</span>
+                        <span class="tech-tag">Security</span>
+                    </div>
+                    
+                    <div class="project-actions">
+                        <button class="btn-project-primary">VIEW PROJECT</button>
+                        <button class="btn-project-secondary">CODE</button>
+                    </div>
+                    
+                    <div class="dev-notes-icon" data-project="network">📝</div>
+                </div>
+            </div>
+            
+            <!-- Secret Dev Notes Panel -->
+            <div id="devNotesPanel" class="dev-notes-panel hidden">
+                <div class="dev-notes-content">
+                    <div class="dev-notes-header">
+                        <span>DEV_NOTES.TXT</span>
+                        <button id="closeDevNotes">X</button>
+                    </div>
+                    <div id="devNotesText" class="dev-notes-text"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <!-- ... keep existing code (holographic background effects) the same ... -->
+        <div class="services-bg"></div>
+        
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title neon-yellow">SERVICES.MATRIX</h2>
+                <div class="title-underline"></div>
+            </div>
+            
+            <!-- Secret Glow Level Meter -->
+            <div id="glowMeter" class="glow-meter hidden">
+                <div class="glow-label">GLOW LEVEL</div>
+                <div class="glow-progress">
+                    <div id="glowFill" class="glow-fill"></div>
+                </div>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card secret-service" data-service="uiux" data-click-count="0">
+                    <div class="service-header">
+                        <div class="service-icon">🎨</div>
+                        <div class="service-info">
+                            <h3 class="service-title">UI/UX Design</h3>
+                            <p class="service-subtitle">Mobile & Web</p>
+                        </div>
+                        <div class="service-price">From $500</div>
+                    </div>
+                    
+                    <p class="service-description">
+                        Creating intuitive and visually stunning user interfaces.
+                    </p>
+                    
+                    <div class="service-features">
+                        <div class="feature-item">• Wireframing</div>
+                        <div class="feature-item">• Prototyping</div>
+                        <div class="feature-item">• User Research</div>
+                        <div class="feature-item">• Design Systems</div>
+                    </div>
+                    
+                    <button class="btn-service">INITIATE PROJECT</button>
+                    
+                    <!-- Secret Audio Speaker -->
+                    <div class="secret-speaker" data-service="uiux">🔊</div>
+                </div>
+                
+                <div class="service-card secret-service" data-service="frontend" data-click-count="0">
+                    <div class="service-header">
+                        <div class="service-icon">💻</div>
+                        <div class="service-info">
+                            <h3 class="service-title">Frontend Development</h3>
+                            <p class="service-subtitle">Web Applications</p>
+                        </div>
+                        <div class="service-price">From $800</div>
+                    </div>
+                    
+                    <p class="service-description">
+                        Building responsive, interactive web applications.
+                    </p>
+                    
+                    <div class="service-features">
+                        <div class="feature-item">• React Development</div>
+                        <div class="feature-item">• Responsive Design</div>
+                        <div class="feature-item">• Performance Optimization</div>
+                        <div class="feature-item">• API Integration</div>
+                    </div>
+                    
+                    <button class="btn-service">INITIATE PROJECT</button>
+                    
+                    <div class="secret-speaker" data-service="frontend">🔊</div>
+                </div>
+                
+                <div class="service-card secret-service" data-service="data" data-click-count="0">
+                    <div class="service-header">
+                        <div class="service-icon">📊</div>
+                        <div class="service-info">
+                            <h3 class="service-title">Data Dashboarding</h3>
+                            <p class="service-subtitle">Power BI Solutions</p>
+                        </div>
+                        <div class="service-price">From $300</div>
+                    </div>
+                    
+                    <p class="service-description">
+                        Transforming complex data into actionable insights.
+                    </p>
+                    
+                    <div class="service-features">
+                        <div class="feature-item">• Interactive Charts</div>
+                        <div class="feature-item">• Real-time Data</div>
+                        <div class="feature-item">• Custom Reports</div>
+                        <div class="feature-item">• Data Analytics</div>
+                    </div>
+                    
+                    <button class="btn-service">INITIATE PROJECT</button>
+                    
+                    <div class="secret-speaker" data-service="data">🔊</div>
+                </div>
+                
+                <div class="service-card secret-service" data-service="network" data-click-count="0">
+                    <div class="service-header">
+                        <div class="service-icon">🛡️</div>
+                        <div class="service-info">
+                            <h3 class="service-title">Network Configuration</h3>
+                            <p class="service-subtitle">Linux-based Systems</p>
+                        </div>
+                        <div class="service-price">From $400</div>
+                    </div>
+                    
+                    <p class="service-description">
+                        Setting up secure network infrastructure.
+                    </p>
+                    
+                    <div class="service-features">
+                        <div class="feature-item">• Server Setup</div>
+                        <div class="feature-item">• Security Config</div>
+                        <div class="feature-item">• DNS/DHCP</div>
+                        <div class="feature-item">• System Administration</div>
+                    </div>
+                    
+                    <button class="btn-service">INITIATE PROJECT</button>
+                    
+                    <div class="secret-speaker" data-service="network">🔊</div>
+                </div>
+            </div>
+            
+            <!-- Secret Confetti Overlay -->
+            <div id="confettiOverlay" class="confetti-overlay hidden">
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <!-- ... keep existing code (animated background, particles, grid overlay) the same ... -->
+        <div class="contact-bg"></div>
+        
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title neon-blue">CONTACT.INTERFACE</h2>
+                <div class="title-underline"></div>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-form-panel glass-panel">
+                    <div class="panel-header">
+                        <div class="status-indicator green"></div>
+                        <span class="panel-label">TRANSMISSION.FORM</span>
+                    </div>
+                    
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="name" class="form-label">USER.NAME</label>
+                            <input type="text" id="name" name="name" class="form-input secret-input" required>
+                            <div class="field-indicator"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">EMAIL.ADDRESS</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                            <div class="field-indicator pink"></div>
+                            <!-- Secret period click trigger -->
+                            <span id="emailPeriod" class="secret-period">.</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject" class="form-label">MESSAGE.SUBJECT</label>
+                            <input type="text" id="subject" name="subject" class="form-input" required>
+                            <div class="field-indicator yellow"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">MESSAGE.CONTENT</label>
+                            <textarea id="message" name="message" class="form-textarea" rows="6" required></textarea>
+                            <div class="field-indicator green"></div>
+                        </div>
+                        
+                        <button type="submit" class="btn-submit">TRANSMIT MESSAGE</button>
+                    </form>
+                    
+                    <!-- Secret AI Chatbot Input -->
+                    <div id="secretChatInput" class="secret-chat-input hidden">
+                        <span class="chat-prompt">CYBER_AI:$</span>
+                        <input type="text" id="secretChat" placeholder="Enter command...">
+                    </div>
+                </div>
+                
+                <div class="contact-info-panel">
+                    <div class="contact-info-item">
+                        <div class="info-icon">📧</div>
+                        <div class="info-content">
+                            <div class="info-label">EMAIL.PROTOCOL</div>
+                            <div class="info-value">Anuj.parajulisep23@cps.edu.np</div>
+                        </div>
+                        <div class="info-indicator blue"></div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <div class="info-icon">📱</div>
+                        <div class="info-content">
+                            <div class="info-label">COMM.CHANNEL</div>
+                            <div class="info-value">+977 9746235377</div>
+                        </div>
+                        <div class="info-indicator green"></div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <div class="info-icon">📍</div>
+                        <div class="info-content">
+                            <div class="info-label">LOCATION.DATA</div>
+                            <div class="info-value">Kathmandu, Nepal</div>
+                        </div>
+                        <div class="info-indicator pink"></div>
+                    </div>
+                    
+                    <!-- Secret Social Networks with Cipher -->
+                    <div class="social-networks glass-panel">
+                        <div class="panel-header">
+                            <div class="status-indicator purple"></div>
+                            <span class="panel-label">SOCIAL.NETWORKS</span>
+                        </div>
+                        <div class="social-links">
+                            <button class="social-btn">🔗 GitHub</button>
+                            <button class="social-btn">💼 LinkedIn</button>
+                            <button class="social-btn">🌐 Portfolio</button>
+                        </div>
+                        
+                        <!-- Secret Footer Cipher -->
+                        <div class="footer-cipher">
+                            <span class="cipher-text">47 69 74 48 75 62 2E 63 6F 6D 2F 61 6E 75 6A</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="brand-icon">AP</div>
+                <span class="brand-text">ANUJ PARAJULI</span>
+            </div>
+            
+            <p class="footer-description">Frontend Developer & UI/UX Designer</p>
+            
+            <div class="footer-status">
+                <div class="status-dot"></div>
+                <span>© 2024 • CRAFTED WITH CYBER PRECISION</span>
+                <div class="status-dot"></div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Secret Dark Zone -->
+    <div id="darkZone" class="dark-zone hidden">
+        <div class="dark-zone-content">
+            <h2 class="dark-zone-title">⚡ THE CODE IS ALIVE ⚡</h2>
+            <p class="dark-zone-quote">"In the digital realm, creativity becomes reality, and code breathes life into imagination."</p>
+            <div class="matrix-rain"></div>
+        </div>
+    </div>
+
+    <!-- Secret Chatbot Pixel -->
+    <div id="secretChatbotPixel" class="secret-chatbot-pixel"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
